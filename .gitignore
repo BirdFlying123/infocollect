@@ -1,0 +1,15 @@
+*.class
+
+#package file
+*.war
+*.ear
+
+#maven ingore
+target/
+
+#idea ingore
+.idea/
+/idea/
+*.ipr
+*.iml
+*.iws
