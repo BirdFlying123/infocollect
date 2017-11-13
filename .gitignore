@@ -10,6 +10,7 @@ target/
 #idea ingore
 .idea/
 /idea/
+src/test/
 *.ipr
 *.iml
 *.iws
