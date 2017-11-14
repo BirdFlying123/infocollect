@@ -16,7 +16,7 @@
     <!--配置视图解析器：如何把handler方法返回的值解析为实际的物理视图-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/Views/"/>
-        <property name="suffix" value=".jsp"/>
+        <property name="suffix" value=""/>
     </bean>
 
     <!--配置json数据转换-->
@@ -24,14 +24,14 @@
     <!--&lt;!&ndash;配置自定义视图&ndash;&gt;-->
     <!--<mvc:view-controller path="/success" view-name="login"/>-->
 
-    <!--配置拦截器-->
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <mvc:exclude-mapping path="/login"/>
-            <bean class=""/>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--&lt;!&ndash;配置拦截器&ndash;&gt;-->
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<mvc:exclude-mapping path="/login"/>-->
+            <!--<bean class=""/>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 
 
 </beans>

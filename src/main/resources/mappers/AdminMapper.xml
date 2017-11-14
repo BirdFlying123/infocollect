@@ -81,4 +81,12 @@
       role = #{role,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <!--检验登录信息-->
+  <select id="checkLogin" resultType="int" parameterType="string">
+    select COUNT(1) from admin
+    where username=#{username} and password=#{password}
+  </select>
+
+
 </mapper>
