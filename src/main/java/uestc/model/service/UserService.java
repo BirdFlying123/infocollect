@@ -1,5 +1,6 @@
 package uestc.model.service;
 
+import org.apache.ibatis.annotations.Param;
 import uestc.common.ResponseTemplate;
 import uestc.model.entity.dao.User;
 import uestc.model.entity.vo.BackUserInfo;
@@ -37,7 +38,11 @@ public interface UserService {
 
     //    登录状态重置密码
     public boolean resetPassword(String email, String newpasword);
-//更新个人信息
+
+    //更新个人信息
     public boolean update(User user);
+
+//    根据email获取用户信息
+    public User getUserByEmail(@Param("email")String email);
 }
 

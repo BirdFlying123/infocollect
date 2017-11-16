@@ -12,6 +12,7 @@ import uestc.common.Constvar;
 import uestc.common.ResponseTemplate;
 import uestc.model.entity.dao.User;
 import uestc.model.entity.vo.ResetPassword;
+import uestc.model.entity.vo.UserVo;
 import uestc.model.service.UserService;
 
 
@@ -36,9 +37,9 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/check_valid.do", method = RequestMethod.POST)
-    public ResponseTemplate check_valid(@RequestBody String email) {
-        System.out.println(email);
-        return userService.checkEmailValid(email);
+    public ResponseTemplate check_valid(@RequestBody User user) {
+        System.out.println(user.getEmail());
+        return userService.checkEmailValid(user.getEmail());
     }
 
     /*
@@ -79,12 +80,12 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/forget_get_question.do", method = RequestMethod.GET)
-    public ResponseTemplate forget_get_question(@RequestBody String email) {
-        if (userService.checkEmail(email) == true)
+    @RequestMapping(value = "/forget_get_question.do", method = RequestMethod.POST)
+    public ResponseTemplate forget_get_question(@RequestBody UserVo userVo) {
+        if (userService.checkEmail(userVo.getEmail()) == true)
             return new ResponseTemplate(0, "用户名不存在", null);
         else {
-            String question = userService.getUserInfo(email).getQuestion();
+            String question = userService.getUserInfo(userVo.getEmail()).getQuestion();
             return new ResponseTemplate(1, "", question);
         }
     }

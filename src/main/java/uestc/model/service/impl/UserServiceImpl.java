@@ -72,12 +72,12 @@ public class UserServiceImpl implements UserService {
         user.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
 
         userMapper.insert(user);
+        user.setPassword(null);
         return new ResponseTemplate(1, "注册成功", user);
     }
 
     public ResponseTemplate checkEmailValid(String email) {
         boolean result = checkEmail(email);
-        System.out.println(result+"......."+(result==false));
         if (result == false)
             return new ResponseTemplate(0, "邮箱已存在", null);
         return new ResponseTemplate(1, "SUCCESS", null);
@@ -132,6 +132,9 @@ public class UserServiceImpl implements UserService {
 
         if (StringUtils.isEmpty(user.getPassword()))
             user.setEmail(null);
+        else {
+            user.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
+        }
         if (StringUtils.isEmpty(user.getInstitution()))
             user.setInstitution(null);
         if (StringUtils.isEmpty(user.getQuestion()))
@@ -143,9 +146,14 @@ public class UserServiceImpl implements UserService {
         user.setIfchecked(null);
         user.setUpdatetime(new Date());
         user.setCreatetime(null);
-        user.setId(userMapper.selectPKByEmail(user.getEmail()));
+        user.setId(userMapper.selectPKByEmail(user.getEmail()).getId());
 
         userMapper.updateByPrimaryKeySelective(user);
         return false;
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return userMapper.selectPKByEmail(email);
     }
 }

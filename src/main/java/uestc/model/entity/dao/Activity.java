@@ -5,6 +5,8 @@ import java.util.Date;
 public class Activity {
     private Integer id;
 
+    private Integer userid;
+
     private String name;
 
     private Integer categoryid;
@@ -25,8 +27,9 @@ public class Activity {
 
     private Date updatetime;
 
-    public Activity(Integer id, String name, Integer categoryid, String theme, String content, String contact, String place, Date starttime, Date endtime, Date createtime, Date updatetime) {
+    public Activity(Integer id, Integer userid, String name, Integer categoryid, String theme, String content, String contact, String place, Date starttime, Date endtime, Date createtime, Date updatetime) {
         this.id = id;
+        this.userid = userid;
         this.name = name;
         this.categoryid = categoryid;
         this.theme = theme;
@@ -49,6 +52,14 @@ public class Activity {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 
     public String getName() {
@@ -135,6 +146,7 @@ public class Activity {
     public String toString() {
         return "Activity{" +
                 "id=" + id +
+                ", userid=" + userid +
                 ", name='" + name + '\'' +
                 ", categoryid=" + categoryid +
                 ", theme='" + theme + '\'' +

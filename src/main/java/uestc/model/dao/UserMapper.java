@@ -36,5 +36,8 @@ public interface UserMapper {
     //    更新密码
     boolean updatePasswordByEmail(@Param("email") String email, @Param("password") String password);
 
-    int selectPKByEmail(@Param("email") String email);
+    //依据email获取用户信息
+    User selectPKByEmail(@Param("email") String email);
+
+
 }

@@ -29,7 +29,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="uestc.model.entity.dao.User">
+    <insert id="insert" parameterType="uestc.model.entity.dao.User" useGeneratedKeys="true" keyProperty="id">
     insert into user (id, email, password, 
       role, institution, question, 
       answer, ifchecked, createtime, 
@@ -191,8 +191,9 @@
         where email=#{email}
     </update>
     <!--依据email查PK-->
-    <select id="selectPKByEmail" resultType="java.lang.Integer" parameterType="string">
-        select id
+    <select id="selectPKByEmail" resultMap="BaseResultMap" parameterType="string">
+        select
+        <include refid="Base_Column_List"/>
         from user
         where email=#{email}
     </select>
