@@ -43,6 +43,9 @@
   
   
   &emsp;&emsp;安卓：Android studio开发，安卓部分的代码链接：https://github.com/taoz27/IdeaApp
+  
+## 3.3接口文档：
+&emsp;&emsp;见此项目的interfacePDF文件夹下
 
 # 4.gif图片
 ## 4.1游客
