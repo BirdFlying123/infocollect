@@ -28,7 +28,7 @@
   管理员可以对主办方的身份进行认证，同时可以管理活动的分类信息。
 ## 2.3：项目原型部分截图展示
 ### 2.3.1--------app主页面（搜索活动），活动详细信息页面
-  ![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/1.png)
+  ![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/demo.gif)
   ![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/2.png)
 ### 2.3.2--------发布活动页面
   ![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/3.png)
