@@ -37,9 +37,32 @@
 ## 3.1最终产品：
    &emsp;&emsp;最终产品为app和网页。app供游客和主办方使用，用来发布活动于查询活动。网页供管理员使用来进行主办方身份的验证。
 ## 3.2开发技术：
-   &emsp;&emsp;后台：采用spring、springmvc、mybatis框架进行开发，maven进行包管理，最终将项目部署到阿里云服务器。后台采用mvc的开发模式，controller用来处理请求，model层处理业务逻辑，view与前端交互渲染网页。其中model层分为服务层service与数据库交互层dao，分层模式开发有利于日后功能的扩充。
+   &emsp;&emsp;后台：采用spring、springmvc、mybatis框架进行开发，maven进行包管理，最终将项目部署到阿里云服务器。
 
   &emsp;&emsp; 前端：html、css、开发，管理员登录网址：http://120.78.189.95/
   
   
-  &emsp;&emsp;安卓：Android studio开发，安卓部分的代码链接及介绍：https://github.com/taoz27/IdeaApp
+  &emsp;&emsp;安卓：Android studio开发，安卓部分的代码链接：https://github.com/taoz27/IdeaApp
+
+# 4.gif图片
+## 4.1游客
+### 4.1.1搜索活动以及查看其详细信息
+![image](https://github.com/taoz27/IdeaApp/gifs/search.gif)
+## 4.2主办方
+### 4.2.1注册、登录、退出
+![image](https://github.com/taoz27/IdeaApp/gifs/登录.gif)
+### 4.2.2修改信息
+![image](https://github.com/taoz27/IdeaApp/gifs/修改个人信息.gif)
+### 4.2.3发布活动、查看我的空间
+![image](https://github.com/taoz27/IdeaApp/gifs/发布活动.gif)
+### 4.2.4修改删除活动
+![image](https://github.com/taoz27/IdeaApp/gifs/修改删除活动.gif)
+## 4.3管理员
+### 4.3.1通过验证
+![image](https://github.com/taoz27/IdeaApp/gifs/search.gif)
+
+
+
+
+
+
