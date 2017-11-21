@@ -47,19 +47,19 @@
 # 4.gif图片
 ## 4.1游客
 ### 4.1.1搜索活动以及查看其详细信息
-![image](https://github.com/taoz27/IdeaApp/gifs/search.gif)
+![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/search.gif)
 ## 4.2主办方
 ### 4.2.1注册、登录、退出
-![image](https://github.com/taoz27/IdeaApp/gifs/登录.gif)
+![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/登录.gif)
 ### 4.2.2修改信息
-![image](https://github.com/taoz27/IdeaApp/gifs/修改个人信息.gif)
+![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/修改个人信息.gif)
 ### 4.2.3发布活动、查看我的空间
-![image](https://github.com/taoz27/IdeaApp/gifs/发布活动.gif)
+![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/发布活动.gif)
 ### 4.2.4修改删除活动
-![image](https://github.com/taoz27/IdeaApp/gifs/修改删除活动.gif)
+![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/修改删除活动.gif)
 ## 4.3管理员
 ### 4.3.1通过验证
-![image](https://github.com/taoz27/IdeaApp/gifs/search.gif)
+![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/search.gif)
 
 
 
