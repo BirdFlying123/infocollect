@@ -53,9 +53,13 @@
 ![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/登录.gif)
 ### 4.2.2修改信息
 ![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/修改个人信息.gif)
-### 4.2.3发布活动、查看我的空间
-![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/发布活动.gif)
-### 4.2.4修改删除活动
+### 4.2.3未认证发布活动（失败，不能发布）
+![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/未认证发布.gif)
+### 4.2.4管理员认证
+![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/通过验证.gif)
+### 4.2.5认证后发布活动，查看我的空间
+![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/已认证发布.gif)
+### 4.2.6修改删除活动
 ![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/修改删除活动.gif)
 ## 4.3管理员
 ### 4.3.1通过验证
