@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="uestc.model.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="uestc.model.entity.dao.User">
+        <constructor>
+            <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="role" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="institution" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="question" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="answer" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="ifchecked" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="createtime" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="updatetime" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, email, password, role, institution, question, answer, ifchecked, createtime, 
+    updatetime
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="uestc.model.entity.dao.User" useGeneratedKeys="true" keyProperty="id">
+    insert into user (id, email, password, 
+      role, institution, question, 
+      answer, ifchecked, createtime, 
+      updatetime)
+    values (#{id,jdbcType=INTEGER}, #{email,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{role,jdbcType=INTEGER}, #{institution,jdbcType=VARCHAR}, #{question,jdbcType=VARCHAR}, 
+      #{answer,jdbcType=VARCHAR}, #{ifchecked,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+    <insert id="insertSelective" parameterType="uestc.model.entity.dao.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="role != null">
+                role,
+            </if>
+            <if test="institution != null">
+                institution,
+            </if>
+            <if test="question != null">
+                question,
+            </if>
+            <if test="answer != null">
+                answer,
+            </if>
+            <if test="ifchecked != null">
+                ifchecked,
+            </if>
+            <if test="createtime != null">
+                createtime,
+            </if>
+            <if test="updatetime != null">
+                updatetime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="role != null">
+                #{role,jdbcType=INTEGER},
+            </if>
+            <if test="institution != null">
+                #{institution,jdbcType=VARCHAR},
+            </if>
+            <if test="question != null">
+                #{question,jdbcType=VARCHAR},
+            </if>
+            <if test="answer != null">
+                #{answer,jdbcType=VARCHAR},
+            </if>
+            <if test="ifchecked != null">
+                #{ifchecked,jdbcType=INTEGER},
+            </if>
+            <if test="createtime != null">
+                #{createtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatetime != null">
+                #{updatetime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="uestc.model.entity.dao.User">
+        update user
+        <set>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="role != null">
+                role = #{role,jdbcType=INTEGER},
+            </if>
+            <if test="institution != null">
+                institution = #{institution,jdbcType=VARCHAR},
+            </if>
+            <if test="question != null">
+                question = #{question,jdbcType=VARCHAR},
+            </if>
+            <if test="answer != null">
+                answer = #{answer,jdbcType=VARCHAR},
+            </if>
+            <if test="ifchecked != null">
+                ifchecked = #{ifchecked,jdbcType=INTEGER},
+            </if>
+            <if test="createtime != null">
+                createtime = #{createtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatetime != null">
+                updatetime = #{updatetime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="uestc.model.entity.dao.User">
+    update user
+    set email = #{email,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      role = #{role,jdbcType=INTEGER},
+      institution = #{institution,jdbcType=VARCHAR},
+      question = #{question,jdbcType=VARCHAR},
+      answer = #{answer,jdbcType=VARCHAR},
+      ifchecked = #{ifchecked,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+    <!--搜索所有用户信息-->
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+    </select>
+
+    <!--查询邮箱个数-->
+    <select id="selectByEmail" resultType="java.lang.Integer" parameterType="string">
+        select count(1) from user
+        where email=#{email}
+  </select>
+
+    <!--查找用户名密码是否一致-->
+    <select id="selectByEmailAndPassword" resultType="java.lang.Integer" parameterType="string">
+        select count(1) from user
+        where email=#{email} and password=#{password}
+    </select>
+    <!--依据邮箱查用户信息-->
+    <select id="selectUserByEmail" resultMap="BaseResultMap" parameterType="string">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where email=#{email}
+    </select>
+    <!--检验密保答案-->
+    <select id="chechQuestionAndAnswer" resultType="boolean">
+        select count(1) from user
+        where email=#{email} and question=#{question} and answer=#{answer}
+    </select>
+    <!--依据email更新密码-->
+    <update id="updatePasswordByEmail" parameterType="string">
+        update user
+        set password=#{password}
+        where email=#{email}
+    </update>
+    <!--依据email查PK-->
+    <select id="selectPKByEmail" resultMap="BaseResultMap" parameterType="string">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where email=#{email}
+    </select>
+</mapper>
