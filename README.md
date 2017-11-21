@@ -63,7 +63,7 @@
 ![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/修改删除活动.gif)
 ## 4.3管理员
 ### 4.3.1通过验证
-![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/search.gif)
+![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/通过验证.gif)
 
 
 
