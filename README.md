@@ -43,3 +43,28 @@
   
   
   &emsp;&emsp;安卓：Android studio开发，安卓部分的代码链接：https://github.com/taoz27/IdeaApp
+
+# 4.gif图片
+## 4.1游客
+### 4.1.1搜索活动以及查看其详细信息
+![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/搜索.mp4)
+## 4.2主办方
+### 4.2.1注册、登录、退出
+![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/1.png)
+### 4.2.2修改信息
+![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/1.png)
+### 4.2.3发布活动、查看我的空间
+![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/发布活动.png)
+### 4.2.4修改活动
+![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/1.png)
+### 4.2.5删除活动
+![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/删除活动.png)
+## 4.3管理员
+### 4.3.1通过验证
+![image](https://github.com/BirdFlying123/infocollect/raw/v1.0/image/通过验证.png)
+
+
+
+
+
+
