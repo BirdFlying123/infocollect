@@ -27,4 +27,6 @@ public class CategoryController {
         return new ResponseTemplate(1,"",categoryIdInfos);
     }
 
+
+
 }

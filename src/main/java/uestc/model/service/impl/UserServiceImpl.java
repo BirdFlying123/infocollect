@@ -27,6 +27,7 @@ public class UserServiceImpl implements UserService {
     //convert
     public List<BackUserInfo> searchAllUser() {
         List<User> users = userMapper.selectAll();
+        System.out.println(users);
         List<BackUserInfo> backUserInfos = new ArrayList<BackUserInfo>();
         if (users == null)
             return null;
@@ -41,21 +42,19 @@ public class UserServiceImpl implements UserService {
 
             backUserInfos.add(backUserInfo);
         }
-        return null;
+        return backUserInfos;
     }
 
     //need convert
     public boolean changeStauts(int id) {
         User user = userMapper.selectByPrimaryKey(id);
         if (user.getIfchecked() == 1) {
-            User user1 = new User();
-            user1.setIfchecked(0);
-            userMapper.updateByPrimaryKeySelective(user1);
+            user.setIfchecked(0);
+            userMapper.updateByPrimaryKeySelective(user);
             return true;
         } else {
-            User user1 = new User();
-            user1.setIfchecked(1);
-            userMapper.updateByPrimaryKeySelective(user1);
+            user.setIfchecked(1);
+            userMapper.updateByPrimaryKeySelective(user);
             return false;
         }
     }
@@ -135,6 +134,7 @@ public class UserServiceImpl implements UserService {
         else {
             user.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
         }
+
         if (StringUtils.isEmpty(user.getInstitution()))
             user.setInstitution(null);
         if (StringUtils.isEmpty(user.getQuestion()))

@@ -9,10 +9,16 @@
 <html>
 <head>
     <title>manage</title>
-</head>
-<body>
+</head >
+<body BGCOLOR="#CCCCCC">
 
-<a href="/admin/list_user.do" methods="get">查看所有用户信息</a>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<div align="center">
+    <a href="/admin/list_user.do" methods="get">
+        <font face="宋体" color="#000000">查看所有用户信息</font>
+    </a>
+</div>
 
 </body>
 </html>

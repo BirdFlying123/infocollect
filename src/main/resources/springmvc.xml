@@ -12,6 +12,7 @@
     <!--配置自动扫描的包-->
     <context:component-scan base-package="uestc.controller"/>
 
+    <mvc:resources mapping="/image/**" location="/image/" />
 
     <!--配置视图解析器：如何把handler方法返回的值解析为实际的物理视图-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

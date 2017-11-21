@@ -131,9 +131,13 @@ public class UserController {
     public ResponseTemplate update_information(@RequestBody User user, HttpServletRequest request) {
         String email = (String) request.getSession().getAttribute(Constvar.USEEMAIL);
         //todo
-        user.setEmail(email);
-        userService.update(user);
-        return new ResponseTemplate(1, "修改信息成功", null);
+        String password=user.getPassword();
+        if(userService.loginCheck(email,password)){
+            user.setEmail(email);
+            userService.update(user);
+            return new ResponseTemplate(1, "修改信息成功", null);
+        }
+        return new ResponseTemplate(0,"密码错误",null);
 
     }
 

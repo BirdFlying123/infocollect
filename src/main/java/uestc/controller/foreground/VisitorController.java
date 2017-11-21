@@ -40,7 +40,7 @@ public class VisitorController {
         }
         if (visitorSearchVo.getType().equals("classfiy")) {
 
-            int actegoryid = categoryService.getIdByActivityName(visitorSearchVo.getDesc());
+            //int actegoryid = categoryService.getIdByActivityName(visitorSearchVo.getDesc());
             List<ActivityVo> activityVos = activityService.listByCategoryId
                     (new Integer(visitorSearchVo.getDesc()), visitorSearchVo.getPage(), visitorSearchVo.getPagesize());
             return new ResponseTemplate(1,"",activityVos);
@@ -48,3 +48,5 @@ public class VisitorController {
         return new ResponseTemplate(0,"请求错误",null);
     }
 }
+
+

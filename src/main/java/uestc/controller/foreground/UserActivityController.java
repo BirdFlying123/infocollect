@@ -1,6 +1,5 @@
 package uestc.controller.foreground;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import uestc.common.Constvar;
 import uestc.common.ResponseTemplate;
 import uestc.model.entity.dao.Activity;
+import uestc.model.entity.dao.User;
 import uestc.model.entity.vo.ActivityDetailVo;
 import uestc.model.entity.vo.ActivityVo;
 import uestc.model.service.ActivityService;
@@ -44,6 +44,12 @@ public class UserActivityController {
     public ResponseTemplate list(HttpServletRequest request) {
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute(Constvar.USEEMAIL);
+
+        User user= userService.getUserByEmail(email);
+        if(user.getIfchecked().toString().equals("0"))
+            return new ResponseTemplate(0,"请先通过验证",null);
+
+
         if (StringUtils.isEmpty(email))
             return new ResponseTemplate(0, "未登录，请先登录", null);
 
@@ -53,7 +59,14 @@ public class UserActivityController {
 
     @ResponseBody
     @RequestMapping(value = "/search.do", method = RequestMethod.POST)
-    public ResponseTemplate search(@RequestBody Activity activity) {
+    public ResponseTemplate search(@RequestBody Activity activity,HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String email = (String) session.getAttribute(Constvar.USEEMAIL);
+
+        User user= userService.getUserByEmail(email);
+        if(user.getIfchecked().toString().equals("0"))
+            return new ResponseTemplate(0,"请先通过验证",null);
+
         ActivityDetailVo activityDetailVo = activityService.search(activity.getId());
 
         return new ResponseTemplate(1, "", activityDetailVo);
@@ -61,7 +74,15 @@ public class UserActivityController {
 
     @ResponseBody
     @RequestMapping(value = "/alter.do", method = RequestMethod.POST)
-    public ResponseTemplate alter(@RequestBody ActivityDetailVo activityDetailVo) {
+    public ResponseTemplate alter(@RequestBody ActivityDetailVo activityDetailVo,HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String email = (String) session.getAttribute(Constvar.USEEMAIL);
+
+        User user= userService.getUserByEmail(email);
+        if(user.getIfchecked().toString().equals("0"))
+            return new ResponseTemplate(0,"请先通过验证",null);
+
+
         int categoryid = categoryService.getIdByActivityName(activityDetailVo.getLable());
         activityDetailVo.setCategoryid(categoryid);
         int row = activityService.update(activityDetailVo);
@@ -75,6 +96,11 @@ public class UserActivityController {
     public ResponseTemplate delete(@RequestBody Activity activity, HttpServletRequest request) {
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute(Constvar.USEEMAIL);
+        User user= userService.getUserByEmail(email);
+        if(user.getIfchecked().toString().equals("0"))
+            return new ResponseTemplate(0,"请先通过验证",null);
+
+
         int userid = userService.getUserByEmail(email).getId();
         int number = activityService.delete(activity.getId(), userid);
         if (number == 0) {
@@ -88,6 +114,12 @@ public class UserActivityController {
     public ResponseTemplate add(@RequestBody ActivityDetailVo activityDetailVo, HttpServletRequest request) {
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute(Constvar.USEEMAIL);
+        User user= userService.getUserByEmail(email);
+        if(user.getIfchecked().toString().equals("0"))
+            return new ResponseTemplate(0,"请先通过验证",null);
+
+
+
         if (StringUtils.isEmpty(email))
             return new ResponseTemplate(0, "未登录，请登录", null);
 
