@@ -69,11 +69,5 @@
 ![image](https://github.com/taoz27/IdeaApp/raw/master/gifs/通过验证.gif)
 
 
-# 队伍成员
-
-队伍名称：fantasy
-
-队员：王世亮，赵涛，李雪阳，周智轩
-
 
 
